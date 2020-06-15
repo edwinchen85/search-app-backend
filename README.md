@@ -5,16 +5,10 @@ Framework and MongoDB.
 
 ## Front-end
 
-For this assignment of building a search application, to populate larger set of
-data points quickly, I choose to use dummy data from
-[Star Wars API](https://swapi.dev).
+Once the application is loaded, at the top of the page you will be greeted with a search
+input field to enter title keyword.
 
-Once the application is loaded, at the top of the page you will see a search
-input field along with filter select menu.
-
-In the middle of page show search result of the Star Wars character profiles in
-table form. You may select different filter and then proceed to search by
-keyword.
+Once keyword has been entered into search input field, the application will send a GET request to server. If there are matches in search result, it will return a response with an array of data object and show the search result below the input field. Keyword will be highlighted in the search result title.
 
 Below search result table, on the left, you may select to show number of search
 result. On the right, is the pagination element showing current page and also
@@ -34,8 +28,13 @@ yarn start
 
 ## Back-end
 
-A json file that contains profile of 50 Star Wars characters is prepared
-beforehand.
+For this assignment, I am using Node.js Express framework to develop backend.
+There can be scenarios that given database contains a massive data set and the
+search queries may return large number of matching results. To manage this, I am
+using pagination approach to limit a certain number of search results to be
+displayed once at a time. User may navigate previous and next search page
+result. There is an option to select number of results to be shown per search
+result page.
 
 When you spin up back end server, the json file will be loaded once into
 database for the first time.
@@ -61,4 +60,24 @@ Spin up Express server
 
 ```
 npm start
+```
+
+To clear existing MongoDB database to reload new set of data, run following
+command to enter Mongo shell first
+
+```
+mongo
+```
+
+Select database
+
+```
+use pagination
+```
+
+Delete selected database to allow backend server to load new json data on next
+spin up
+
+```
+db.dropDatabase()
 ```
