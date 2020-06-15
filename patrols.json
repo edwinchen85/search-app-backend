@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Missed patrol at site Charlie Alpha 12",
+    "description": "Patrol scheduled at 3pm for site Charlie Alpha 12 has not yet started."
+  },
+  {
+    "id": 2,
+    "title": "Missed patrol at site Bravo Romeo",
+    "description": "Patrol scheduled at 4pm on site Bravo Romeo has not yet started."
+  },
+  {
+    "id": 3,
+    "title": "Broken window at Mercury Matrix",
+    "description": "Broken window spotted at Mercury Matrix at 9pm near the entrance."
+  },
+  {
+    "id": 4,
+    "title": "Patrol incomplete at site Bronze Club",
+    "description": "Patrol for site Bronze Club is missing checkpoint [4, 5].  Both QR codes are broken and have requested supervisor to reprint the broken QR codes at 4pm."
+  },
+  {
+    "id": 5,
+    "title": "Missed patrol at site Hilton Hotel",
+    "description": "Patrol scheduled at 5pm on site Hilton Hotel has not yet started."
+  },
+  {
+    "id": 6,
+    "title": "Patrol incomplete at site McFly Beta",
+    "description": "Patrol for site McFly Beta is missing checkpoint [2, 7].  Both QR codes are broken and have requested supervisor to reprint the broken QR codes at 3pm."
+  },
+  {
+    "id": 7,
+    "title": "Vandalism at site Heartland Mall",
+    "description": "Act of vandalism spotted on Heartland Mall near rear entrance at 11pm."
+  },
+  {
+    "id": 8,
+    "title": "Theft at site Bonyage Resort",
+    "description": "Act of theft spotted on Bonyage Resort at 1am."
+  }
+]
