@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
-const Character = require('./character')
-const characters = require('./characters.json')
+const Patrol = require('./patrol')
+const patrols = require('./patrols.json')
 
 mongoose.connect('mongodb://localhost/pagination', {
   useNewUrlParser: true,
@@ -11,12 +11,12 @@ mongoose.connect('mongodb://localhost/pagination', {
 
 const db = mongoose.connection
 db.once('open', async () => {
-  if ((await Character.countDocuments().exec()) > 0) return
+  if ((await Patrol.countDocuments().exec()) > 0) return
 
-  const arr = characters.map(char => () => Character.create(char))
+  const arr = patrols.map(patrol => () => Patrol.create(patrol))
 
   Promise.all(arr.map(item => item())).then(() =>
-    console.log('Added Star Wars Characters')
+    console.log('Added Patrol Data')
   )
 })
 
@@ -29,17 +29,16 @@ app.use(function(req, res, next) {
   next()
 })
 
-app.get('/characters', (req, res) => {
+app.get('/patrols', (req, res) => {
   const page = parseInt(req.query.page)
   const limit = parseInt(req.query.limit)
-  const filter = req.query.filter
   const search = req.query.search
 
   const results = {}
 
-  Character.paginate(
+  Patrol.paginate(
     {
-      [filter]: { $regex: search, $options: 'i' },
+      title: { $regex: search, $options: 'i' },
     },
     {
       page,
