@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const Patrol = require('./patrol')
 const patrols = require('./patrols.json')
 
-mongoose.connect('mongodb://localhost/pagination', {
+mongoose.connect('mongodb://localhost/paginations', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
